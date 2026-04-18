@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --color-brand-orange: #FF4D00;
+  --color-brand-gold: #D4AF37;
+  --color-surface-dark: #09090b;
+  --color-surface-light: #f8f9fa;
+  --color-zinc-border: rgba(228, 228, 231, 0.1);
+}
+
+@layer base {
+  body {
+    @apply bg-surface-light text-zinc-900 antialiased selection:bg-brand-orange selection:text-white;
+  }
+  
+  h1, h2, h3, h4, .font-display {
+    @apply font-display tracking-tight leading-none uppercase;
+  }
+}
+
+.glass-nav {
+  @apply backdrop-blur-xl bg-white/70 border-b border-zinc-200/50;
+}
+
+.dark .glass-nav {
+  @apply bg-zinc-950/70 border-white/5;
+}
+
+.btn-primary {
+  @apply px-10 py-5 rounded-full font-black uppercase tracking-widest text-xs transition-all duration-500 active:scale-95 bg-zinc-900 text-white hover:bg-brand-orange hover:shadow-[0_20px_50px_rgba(255,77,0,0.3)] shadow-2xl;
+}
+
+.btn-accent {
+  @apply px-10 py-5 rounded-full font-black uppercase tracking-widest text-xs transition-all duration-500 active:scale-95 bg-white text-zinc-900 border border-zinc-200 hover:border-brand-orange hover:text-brand-orange shadow-xl;
+}
+
+.card-industrial {
+  @apply relative overflow-hidden rounded-[2.5rem] border border-zinc-200 bg-white transition-all duration-700 hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] hover:-translate-y-2;
+}
+
+.dark .card-industrial {
+  @apply border-white/5 bg-zinc-900/50 hover:bg-zinc-900 hover:border-brand-orange/30;
+}
+
+.technical-line {
+  @apply h-[1px] w-full bg-gradient-to-r from-transparent via-zinc-200 to-transparent my-12;
+}
+
+.dark .technical-line {
+  @apply via-white/10;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  @apply bg-zinc-100;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-zinc-300 rounded-full hover:bg-zinc-400;
+}
